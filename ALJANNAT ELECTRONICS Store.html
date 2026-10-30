@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<meta name="description" content="ALJANNAT ELECTRONICS — considered home appliances and electrical essentials.">
+<title>ALJANNAT ELECTRONICS — Home, redefined</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#08090b;--ink:#e8e6e1;--muted:#898982;--line:rgba(232,230,225,.17);--paper:#e9e7e1;--paper-ink:#11120f;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--page:clamp(24px,6.2vw,104px)}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 14px/1.6 var(--sans);letter-spacing:.015em}
+body.loading{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{color:inherit}
+::selection{background:var(--ink);color:var(--bg)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+#scene{position:fixed;inset:0;width:100%;height:100%;z-index:0;background:#08090b}
+.shade{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(5,6,8,.69),transparent 74%),linear-gradient(0deg,rgba(5,6,8,.7),transparent 35%,rgba(5,6,8,.26))}
+.site{position:relative;z-index:2;overflow:clip}
+.nav{position:fixed;z-index:10;left:0;right:0;top:0;padding:24px var(--page);display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;color:var(--ink);mix-blend-mode:normal}
+.brand{font-size:12px;letter-spacing:.28em;font-weight:600}
+.nav-center{text-align:center;color:#b8b6b0;font-size:10px;letter-spacing:.24em}
+.nav-right{display:flex;justify-content:flex-end;align-items:center;gap:26px;font-size:10px;letter-spacing:.2em}
+.cart-link{border:0;background:none;padding:0;cursor:pointer;letter-spacing:inherit}
+.cart-count{color:#99988f;margin-left:5px}
+.hero{height:100svh;min-height:680px;position:relative;display:flex;align-items:center;padding:100px var(--page) 50px}
+.hero-copy{max-width:620px}
+.eyebrow{font-size:9px;letter-spacing:.32em;color:#aaa9a1;text-transform:uppercase}
+h1,h2,h3,p{margin-top:0}
+.hero h1{font:400 clamp(58px,9vw,132px)/.93 var(--serif);letter-spacing:-.055em;margin:28px 0 25px;max-width:740px}
+.hero h1 span{display:block;color:#a6a49c;font-style:italic}
+.hero p{max-width:340px;color:#b4b2aa;font-size:13px;line-height:1.9;margin-bottom:32px}
+.button{display:inline-flex;gap:24px;align-items:center;border:1px solid rgba(232,230,225,.55);padding:13px 18px;font-size:9px;letter-spacing:.22em;text-transform:uppercase;background:transparent;transition:background .3s,color .3s,border .3s;cursor:pointer}
+.button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.button .arrow{font-size:15px;line-height:1}
+.hero-index{position:absolute;right:var(--page);bottom:42px;color:#aaa9a1;font-size:9px;letter-spacing:.22em}
+.chapter{position:relative}
+.collection{height:210vh}
+.sticky-collection{height:100svh;min-height:700px;position:sticky;top:0;overflow:hidden;padding:15vh var(--page) 10vh}
+.section-heading{display:flex;justify-content:space-between;align-items:end;position:relative;z-index:2}
+.section-heading h2{font:400 clamp(34px,5vw,68px)/1 var(--serif);letter-spacing:-.04em;margin:10px 0 0}
+.section-heading p{margin:0;color:var(--muted);font-size:10px;letter-spacing:.16em}
+.appliance-track{position:absolute;left:var(--page);top:35%;display:flex;gap:22px;will-change:transform}
+.appliance-card{width:min(27vw,350px);min-width:260px;flex:none}
+.appliance-image{height:min(38vh,360px);min-height:250px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,rgba(180,164,127,.1),transparent 68%)}
+.appliance-image:after{content:"";position:absolute;inset:0;background:radial-gradient(220px circle at var(--px,50%) var(--py,45%),rgba(224,207,166,.14),transparent 70%);opacity:.7;transition:opacity .35s}
+.appliance-card:hover .appliance-image:after{opacity:1}
+.appliance-art{width:80%;height:92%;filter:drop-shadow(0 28px 30px rgba(0,0,0,.4));transition:transform .65s cubic-bezier(.2,.8,.2,1)}
+.appliance-card:hover .appliance-art{transform:translateY(-7px) scale(1.035)}
+.appliance-meta{display:grid;grid-template-columns:1fr auto;gap:5px 16px;padding:12px 2px 0}
+.appliance-meta h3{font:400 16px var(--serif);letter-spacing:.1em;margin:0}
+.appliance-meta p{grid-column:1;color:#97968e;font-size:9px;letter-spacing:.17em;margin:0}
+.appliance-price{grid-column:2;grid-row:1/3;color:#d4d1c9;font-size:10px;letter-spacing:.09em;align-self:center}
+.precision{min-height:115vh;display:flex;align-items:center;padding:15vh var(--page);position:relative}
+.precision-copy{max-width:490px}
+.precision h2{font:400 clamp(44px,6.6vw,92px)/1.02 var(--serif);letter-spacing:-.045em;margin:24px 0}
+.precision h2 span{color:#9e9c94;font-style:italic}
+.precision-copy>p{max-width:340px;color:#aaa9a1;font-size:12px;line-height:2}
+.precision-note{margin-top:74px;padding-top:18px;border-top:1px solid var(--line);font-size:9px;letter-spacing:.24em;color:#d2d0c8}
+.precision-note span{display:block;margin-top:8px;color:#898982;letter-spacing:.14em}
+.arch{height:125vh;display:flex;align-items:center;justify-content:flex-end;padding:10vh 0 10vh 8vw;overflow:hidden}
+.arch-panel{width:min(78vw,1140px);min-height:min(76vh,760px);background:var(--paper);color:var(--paper-ink);border-radius:48% 0 0 48% / 50% 0 0 50%;padding:clamp(54px,9vw,130px) clamp(36px,8vw,116px);display:flex;flex-direction:column;justify-content:center;transform:translateX(10%);transition:transform .15s linear}
+.arch .eyebrow{color:#65645f}
+.arch h2{font:400 clamp(44px,7vw,98px)/.98 var(--serif);letter-spacing:-.055em;margin:20px 0 14px;max-width:610px}
+.arch-intro{font-size:11px;color:#65645f;max-width:350px;margin-bottom:42px}
+.arch-products{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:660px}
+.arch-item{border-top:1px solid rgba(17,18,15,.24);padding-top:12px}
+.arch-item .appliance-art{width:100%;height:190px;filter:drop-shadow(0 14px 14px rgba(0,0,0,.14))}
+.arch-item h3{font:400 15px var(--serif);letter-spacing:.12em;margin:6px 0}
+.arch-item p{font-size:9px;color:#66655f;margin:0;letter-spacing:.12em}
+.engineering{height:125vh;display:flex;align-items:center;padding:12vh var(--page);position:relative}
+.engineering-copy{max-width:470px}
+.engineering h2{font:400 clamp(60px,10vw,140px)/.92 var(--serif);letter-spacing:-.065em;margin:20px 0}
+.engineering-copy p{font:italic 20px var(--serif);color:#c3c0b7}
+.engineering-copy .detail{font:400 10px/1.9 var(--sans);letter-spacing:.13em;color:#96958d;max-width:320px;margin-top:34px}
+.footer{min-height:48vh;padding:14vh var(--page) 40px;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--line);color:#a7a69e}
+.footer-mark{font:400 clamp(28px,5vw,64px) var(--serif);letter-spacing:.14em}
+.footer small{font-size:9px;letter-spacing:.16em}
+.footer-admin{margin-top:20px;border:0;border-bottom:1px solid var(--line);padding:0 0 4px;background:none;color:#a7a69e;font-size:8px;letter-spacing:.19em;cursor:pointer}
+.preview{position:fixed;z-index:9;left:22px;bottom:18px;padding:6px 9px;border:1px solid rgba(232,230,225,.22);color:#a3a29a;background:rgba(8,9,11,.58);font-size:8px;letter-spacing:.12em;backdrop-filter:blur(8px)}
+.reveal{opacity:0;filter:blur(9px);transform:translateY(25px);transition:opacity 1s ease,filter 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;filter:blur(0);transform:translateY(0)}
+.preloader{position:fixed;inset:0;background:#08090b;z-index:100;display:grid;place-items:center;transition:opacity .8s ease,visibility .8s}
+.preloader.done{opacity:0;visibility:hidden}
+.loader-inner{width:min(270px,72vw);text-align:center}
+.loader-brand{font:400 17px var(--serif);letter-spacing:.28em}
+.loader-progress{height:1px;background:#282925;margin:27px 0 13px;overflow:hidden}
+.loader-bar{height:100%;width:0;background:#d7d4cb;transition:width .12s linear}
+.loader-caption{display:flex;justify-content:space-between;color:#8f8e87;font-size:8px;letter-spacing:.19em}
+.admin-shade,.cart-shade{position:fixed;inset:0;display:none;place-items:center;z-index:60;background:rgba(0,0,0,.82);padding:20px}
+.admin-shade.open,.cart-shade.open{display:grid}
+.admin-box{background:#121310;border:1px solid var(--line);width:min(680px,100%);max-height:88vh;overflow:auto;padding:28px}
+.admin-box h2{font:400 32px var(--serif)}
+.admin-form,.admin-grid{display:grid;gap:12px}
+.admin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.admin-form label,.admin-grid label{display:grid;gap:5px;color:#aaa9a1;font-size:10px;letter-spacing:.08em}
+.admin-form input,.admin-grid input,.admin-grid select{width:100%;padding:10px;background:#090a08;border:1px solid #34352f;color:var(--ink)}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.admin-products{margin-top:18px;display:grid;gap:10px}
+.admin-product{display:grid;grid-template-columns:1fr 1.2fr 110px auto;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:10px}
+.admin-close{float:right;border:0;background:none;font-size:22px;cursor:pointer}
+.cart-box{background:#121310;border:1px solid var(--line);width:min(520px,100%);max-height:88vh;overflow:auto;padding:28px}
+.cart-line{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.cart-line small{display:block;color:var(--muted)}
+.cart-empty{padding:24px 0;color:var(--muted)}
+#admin-message{min-height:20px;color:#bbb8ae;font-size:11px}
+@media(max-width:700px){
+ .nav{grid-template-columns:1fr 1fr;padding-top:18px}.nav-center{display:none}.brand{font-size:10px}.nav-right{gap:14px;font-size:8px}
+ .hero{min-height:650px;align-items:flex-end;padding-bottom:18vh}.hero h1{font-size:clamp(56px,17vw,90px)}
+ .hero-index{bottom:24px}.collection{height:190vh}.sticky-collection{min-height:660px;padding-top:16vh}
+ .section-heading{display:block}.section-heading p{margin-top:14px}.appliance-track{top:35%;gap:16px}
+ .appliance-card{width:70vw;min-width:250px}.appliance-image{height:33vh;min-height:235px}
+ .precision{min-height:100vh;align-items:flex-end;padding-bottom:17vh}.precision h2{font-size:clamp(48px,12vw,76px)}
+ .precision-note{margin-top:48px}.arch{height:115vh;padding-left:0}.arch-panel{width:94vw;min-height:74vh;border-radius:48% 0 0 48% / 50% 0 0 50%;padding:64px 8vw 64px 13vw}
+ .arch-products{gap:12px}.arch-item .appliance-art{height:140px}.arch h2{font-size:clamp(43px,11vw,70px)}
+ .engineering{min-height:100vh;align-items:flex-end;padding-bottom:18vh}.engineering h2{font-size:clamp(56px,14vw,100px)}
+ .footer{min-height:38vh;display:block;padding-top:12vh}.footer small{display:block;margin-top:25px}
+ .preview{left:10px;bottom:10px;font-size:7px}.admin-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none}.appliance-art,.button{transition:none}}
+</style>
+</head>
+<body class="loading">
+<canvas id="scene" aria-hidden="true"></canvas><div class="shade"></div><div class="grain"></div>
+<div class="preloader" id="preloader" role="status" aria-live="polite">
+ <div class="loader-inner"><div class="loader-brand">ALJANNAT ELECTRONICS</div><div class="loader-progress"><div class="loader-bar" id="loaderbar"></div></div><div class="loader-caption"><span>PREPARING THE EXPERIENCE</span><span id="loaderpercent">0%</span></div></div>
+</div>
+<header class="nav"><a class="brand" href="#home">ALJANNAT ELECTRONICS</a><div class="nav-center">HOME COMFORT · EST. 1968</div><div class="nav-right"><span>HOME ELECTRONICS</span><button class="cart-link" id="cartbutton" aria-label="View bag">BAG <span class="cart-count" id="cartcount">00</span></button></div></header>
+<main class="site">
+ <section class="hero chapter" id="home" data-frame="0"><div class="hero-copy reveal"><div class="eyebrow">A considered home · ALJANNAT ELECTRONICS</div><h1>HOME.<span>REDEFINED.</span></h1><p>Thoughtful electrical essentials for the way you live. Explore home comfort, kitchen and everyday appliances, selected for lasting performance.</p><a class="button" href="#featured">Explore appliances <span class="arrow">↘</span></a></div><div class="hero-index">01 — 05 <span id="frameindex">/ 240</span></div></section>
+ <section class="collection chapter" id="featured" data-frame="48"><div class="sticky-collection"><div class="section-heading reveal"><div><div class="eyebrow">The ALJANNAT selection</div><h2>FEATURED APPLIANCES</h2></div><p>SCROLL TO DISCOVER &nbsp; →</p></div><div class="appliance-track" id="appliancetrack"></div></div></section>
+ <section class="precision chapter" id="craft" data-frame="96"><div class="precision-copy reveal"><div class="eyebrow">Selected for everyday living</div><h2>PERFORMANCE IS NOT AN EXTRA.<br><span>IT IS OUR FOUNDATION.</span></h2><p>We bring together dependable appliances, thoughtful guidance and support that continues after you choose.</p><div class="precision-note">COMFORT, CAREFULLY CONSIDERED.<span>SELECTED FOR YOUR HOME · SUPPORTED BY ALJANNAT</span></div></div></section>
+ <section class="arch chapter" id="new" data-frame="144"><div class="arch-panel" id="archpanel"><div class="eyebrow">A new point of view</div><h2>THE HOME<br>COLLECTION</h2><p class="arch-intro">Considered essentials for cooler rooms, effortless routines and the heart of your home.</p><div class="arch-products" id="archproducts"></div></div></section>
+ <section class="engineering chapter" id="engineering" data-frame="192"><div class="engineering-copy reveal"><div class="eyebrow">Inside modern comfort</div><h2>Inverter<br>systems</h2><p>Quiet power. Considered comfort.</p><div class="detail">Efficient cooling, carefully engineered components and performance designed for daily use. Explore practical home solutions with ALJANNAT ELECTRONICS.</div></div></section>
+ <footer class="footer"><div><div class="footer-mark">ALJANNAT<br>ELECTRONICS</div><small>COMFORT, CONSIDERED.</small><br><button class="footer-admin" id="adminbutton" type="button">STORE ADMIN</button></div><small>© <span id="year"></span> ALJANNAT ELECTRONICS<br>APPLIANCES FOR EVERY HOME</small></footer>
+</main>
+<div class="preview">PREVIEW — PERSONAL &amp; CLIENT USE</div>
+<div class="cart-shade" id="cartshade" role="dialog" aria-modal="true" aria-label="Shopping bag"><div class="cart-box"><button class="admin-close" id="cartclose" aria-label="Close bag">×</button><h2 style="font:400 32px var(--serif)">Your bag</h2><div id="cartcontent"></div></div></div>
+<div class="admin-shade" id="adminshade" role="dialog" aria-modal="true" aria-label="Store admin"><div class="admin-box"><button class="admin-close" id="adminclose" aria-label="Close admin">×</button><div id="admincontent"></div></div></div>
+<script>
+"use strict";
+var FRAME_COUNT=240,FRAME_W=480,FRAME_H=270;
+var products=[
+ {id:1,name:"AURELIA",sub:"INVERTER AIR CONDITIONER",price:0,tone:"#aaa28e",face:"#17191a"},
+ {id:2,name:"MONOLITH",sub:"FAMILY REFRIGERATOR",price:0,tone:"#969a9a",face:"#17191a"},
+ {id:3,name:"LINEA",sub:"FRONT-LOAD WASHING MACHINE",price:0,tone:"#b49c73",face:"#1d1b18"},
+ {id:4,name:"NOCTIS",sub:"CONVECTION MICROWAVE OVEN",price:0,tone:"#aaa28e",face:"#191a1c"},
+ {id:5,name:"SOLIS",sub:"MULTIFUNCTION BLENDER",price:0,tone:"#999b9b",face:"#111315"}
+];
+var cart={},frames=[],frameReady=0,ctx=document.getElementById("scene").getContext("2d",{alpha:false}),currentFrame=-1,lastScroll=-1,rafPending=false,lenis=null;
+function esc(value){return String(value==null?"":value).replace(/[&<>"']/g,function(char){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]})}
+function money(value){return Number(value||0)>0?"Rs. "+Number(value).toLocaleString("en-PK"):"Price on request"}
+function applianceSvg(index,frame){
+ var p=products[index%products.length],angle=frame||0;
+ var rotation=(frame||0),content=[];
+ content[0]='<path d="M42 114h276a13 13 0 0 1 13 13v73H29v-73a13 13 0 0 1 13-13z" fill="url(#shell)" stroke="'+p.tone+'" stroke-width="2"/><path d="M43 126h274v15H43z" fill="#f3f0e7" opacity=".76"/><text x="180" y="137" text-anchor="middle" fill="#393a37" font-size="7" letter-spacing="2">ALJANNAT</text><circle cx="296" cy="133" r="2" fill="#a88d5d"/><path d="M43 158h274v15H43z" fill="#101211"/><path d="M49 183h262M49 190h262M49 197h262M49 204h262" stroke="#817e72" stroke-width="2"/><path d="M62 213c32 17 70 23 118 23s86-6 118-23" fill="none" stroke="'+p.tone+'" stroke-opacity=".7" stroke-width="2"/><path d="M86 236c-6 10-10 17-11 25m199-25c6 10 10 17 11 25" stroke="#bbb5a7" stroke-width="2"/>';
+ content[1]='<rect x="76" y="33" width="208" height="333" rx="18" fill="url(#shell)" stroke="'+p.tone+'" stroke-width="2"/><path d="M82 42h196v155H82z" fill="#e1dfd7" opacity=".78"/><path d="M82 202h196v155H82z" fill="#c6c5bf" opacity=".62"/><path d="M83 198h194" stroke="#5d5f5c" stroke-width="3"/><path d="M255 94v78M255 221v91" stroke="#4d4e4b" stroke-width="6" stroke-linecap="round"/><circle cx="106" cy="62" r="3" fill="'+p.tone+'"/><text x="180" y="62" text-anchor="middle" fill="#5b5c58" font-size="8" letter-spacing="3">ALJANNAT</text>';
+ content[2]='<rect x="63" y="35" width="234" height="330" rx="24" fill="url(#shell)" stroke="'+p.tone+'" stroke-width="2"/><path d="M77 52h206v31H77z" fill="#151716"/><circle cx="105" cy="67" r="5" fill="'+p.tone+'"/><text x="180" y="70" text-anchor="middle" fill="#ddd9ce" font-size="7" letter-spacing="2">ALJANNAT</text><circle cx="180" cy="220" r="88" fill="#101211" stroke="#aaa79d" stroke-width="9"/><circle cx="180" cy="220" r="70" fill="#222522" stroke="#62645e" stroke-width="2"/><path d="M139 211c10-20 26-30 41-30s31 10 41 30M140 230c13 21 25 31 40 31s27-10 40-31" fill="none" stroke="'+p.tone+'" stroke-width="2"/><path d="M79 365h202" stroke="#a9a79f" stroke-width="3"/>';
+ content[3]='<rect x="30" y="112" width="300" height="180" rx="17" fill="url(#shell)" stroke="'+p.tone+'" stroke-width="2"/><rect x="48" y="132" width="196" height="140" rx="10" fill="#101211" stroke="#6b6d67" stroke-width="3"/><rect x="58" y="142" width="176" height="120" rx="7" fill="#252925"/><path d="M70 239c24-44 66-61 151-50" fill="none" stroke="#b4a57f" stroke-opacity=".65" stroke-width="2"/><rect x="258" y="139" width="51" height="36" rx="4" fill="#151716" stroke="#6f706a"/><text x="283" y="162" text-anchor="middle" fill="#d1c6aa" font-size="9">12:00</text><circle cx="273" cy="200" r="5" fill="'+p.tone+'"/><circle cx="295" cy="200" r="5" fill="#777970"/><path d="M265 224h37M265 237h37M265 250h37" stroke="#73756f" stroke-width="2"/><text x="145" y="285" text-anchor="middle" fill="#d4d0c7" font-size="7" letter-spacing="2">ALJANNAT</text>';
+ content[4]='<path d="M143 40h74l-10 150h-54z" fill="url(#shell)" stroke="'+p.tone+'" stroke-width="2"/><path d="M145 48h70l-7 125h-56z" fill="#d5d3cc" opacity=".62"/><path d="M137 188h86l8 24H129z" fill="#aaa89f" stroke="#6e706b"/><rect x="110" y="214" width="140" height="130" rx="18" fill="url(#shell)" stroke="'+p.tone+'" stroke-width="2"/><path d="M124 235h112v76a15 15 0 0 1-15 15h-82a15 15 0 0 1-15-15z" fill="#181a19"/><circle cx="180" cy="283" r="40" fill="#232624" stroke="#88867d" stroke-width="3"/><circle cx="180" cy="283" r="8" fill="'+p.tone+'"/><path d="M180 248v27M151 283h21M188 283h21M180 291v22" stroke="#b4aa91" stroke-width="2"/><path d="M145 353h70" stroke="#797b74" stroke-width="3"/>';
+ return '<svg class="appliance-art" viewBox="0 0 360 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="'+esc(p.name)+' home appliance"><defs><linearGradient id="shell" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f0eee7"/><stop offset=".24" stop-color="#a8a79f"/><stop offset=".5" stop-color="#e4e1d8"/><stop offset=".78" stop-color="#787a76"/><stop offset="1" stop-color="#d2cfc5"/></linearGradient></defs><ellipse cx="180" cy="367" rx="128" ry="14" fill="#000" opacity=".4"/><g transform="translate(0 0) rotate('+rotation+' 180 200)">'+content[index%content.length]+'</g></svg>';
+}
+function updateProductMarkup(){
+ var track=document.getElementById("appliancetrack"),arch=document.getElementById("archproducts");
+ track.innerHTML=products.map(function(p,i){return '<article class="appliance-card" data-product="'+i+'"><div class="appliance-image">'+applianceSvg(i,i%2?1:-1)+'</div><div class="appliance-meta"><h3>'+esc(p.name)+'</h3><p>'+esc(p.sub)+'</p><span class="appliance-price">'+money(p.price)+'</span><button class="footer-admin" data-add="'+esc(p.id)+'" type="button">ADD TO BAG +</button></div></article>'}).join("");
+ arch.innerHTML=products.slice(0,2).map(function(p,i){return '<article class="arch-item">'+applianceSvg(i,0)+'<h3>'+esc(p.name)+'</h3><p>'+money(p.price)+'</p></article>'}).join("");
+ track.querySelectorAll(".appliance-image").forEach(function(el){el.addEventListener("pointermove",function(e){var r=el.getBoundingClientRect();el.style.setProperty("--px",(e.clientX-r.left)+"px");el.style.setProperty("--py",(e.clientY-r.top)+"px")})});
+ track.querySelectorAll("[data-add]").forEach(function(button){button.addEventListener("click",function(){var id=button.dataset.add;cart[id]=(cart[id]||0)+1;saveCart();button.textContent="ADDED TO BAG ✓"})});
+}
+function saveCart(){try{localStorage.setItem("aljannat_luxury_cart",JSON.stringify(cart))}catch(error){console.error("Could not save your bag.",error)}renderCart()}
+function renderCart(){
+ var count=Object.keys(cart).reduce(function(total,id){return total+(cart[id]||0)},0);
+ document.getElementById("cartcount").textContent=String(count).padStart(2,"0");
+ var lines=Object.keys(cart).filter(function(id){return cart[id]>0}).map(function(id){var p=products.filter(function(item){return String(item.id)===String(id)})[0];return p?'<div class="cart-line"><div>'+esc(p.name)+'<small>'+money(p.price)+' × '+cart[id]+'</small></div><strong>'+money(p.price*cart[id])+'</strong></div>':""}).join("");
+ document.getElementById("cartcontent").innerHTML=lines||'<p class="cart-empty">Your bag is currently empty.</p>';
+ if(lines)document.getElementById("cartcontent").innerHTML+='<div class="cart-line"><strong>Total</strong><strong>'+money(Object.keys(cart).reduce(function(t,id){var p=products.filter(function(item){return String(item.id)===String(id)})[0];return t+(p?p.price*(cart[id]||0):0)},0))+'</strong></div><a class="button" href="https://wa.me/923459280224?text='+encodeURIComponent("Hello ALJANNAT ELECTRONICS, I would like to order: "+Object.keys(cart).map(function(id){var p=products.filter(function(item){return String(item.id)===String(id)})[0];return p&&cart[id]?p.name+" x "+cart[id]:""}).filter(Boolean).join(", "))+'" target="_blank" rel="noopener">Continue on WhatsApp ↗</a>';
+}
+function frameSvg(i){
+ var phase=i/FRAME_COUNT,local=i%48/48,offset=(local-.5)*24,art="",caption="",bg="#111315";
+ if(phase<.2){
+  art='<g transform="translate('+(-35+local*42)+' '+(18-local*22)+') scale(1.55)"><rect x="58" y="76" width="345" height="123" rx="15" fill="url(#shell)" stroke="#d8d5ca" stroke-width="3"/><path d="M74 89h313v18H74z" fill="#f3f1e9" opacity=".68"/><text x="231" y="102" fill="#42433e" text-anchor="middle" font-size="7" letter-spacing="3">ALJANNAT ELECTRONICS</text><path d="M75 124h309v22H75z" fill="#171918"/><path d="M84 153h291M84 162h291M84 171h291M84 180h291" stroke="#a9a69a" stroke-width="3"/><circle cx="373" cy="98" r="3" fill="#b5a27c"/><path d="M101 203c45 13 83 21 128 21s84-8 128-21M119 230l-20 23m264-23 20 23" fill="none" stroke="#c5bdac" stroke-width="2"/></g>';
+  caption="HOME COMFORT · ALJANNAT ELECTRONICS";
+ }else if(phase<.4){
+  var idx=products.length?Math.min(products.length-1,Math.floor((phase-.2)/.2*products.length)):0;
+  if(idx===0)art='<g transform="translate(70 43)"><rect x="55" y="39" width="250" height="108" rx="15" fill="url(#shell)" stroke="#ddd8c9" stroke-width="2"/><path d="M72 54h216v21H72z" fill="#ededE7"/><path d="M74 102h212M74 109h212M74 116h212M74 123h212" stroke="#777970" stroke-width="2"/><text x="180" y="68" text-anchor="middle" font-size="7" letter-spacing="2" fill="#454640">ALJANNAT</text><circle cx="275" cy="65" r="3" fill="#b29d72"/></g>';
+  else if(idx===1)art='<g transform="translate(108 17)"><rect x="64" y="19" width="139" height="217" rx="12" fill="url(#shell)" stroke="#d6d1c2" stroke-width="2"/><path d="M70 28h127v101H70zM70 134h127v95H70z" fill="#d2d0c8" opacity=".55"/><path d="M71 131h125M183 64v54M183 153v59" stroke="#52534f" stroke-width="4"/><text x="132" y="45" text-anchor="middle" font-size="6" letter-spacing="2" fill="#474843">ALJANNAT</text></g>';
+  else if(idx===2)art='<g transform="translate(115 15)"><rect x="56" y="18" width="152" height="222" rx="17" fill="url(#shell)" stroke="#d6d1c2" stroke-width="2"/><path d="M65 31h134v27H65z" fill="#151716"/><circle cx="133" cy="149" r="57" fill="#171918" stroke="#a9a69a" stroke-width="6"/><circle cx="133" cy="149" r="43" fill="#292c29" stroke="#64665e"/><path d="M105 145c15-30 43-30 57 0" fill="none" stroke="#b5a27c" stroke-width="2"/></g>';
+  else if(idx===3)art='<g transform="translate(87 62)"><rect x="30" y="53" width="266" height="131" rx="15" fill="url(#shell)" stroke="#d6d1c2" stroke-width="2"/><rect x="47" y="68" width="168" height="102" rx="7" fill="#161817" stroke="#686a62" stroke-width="3"/><rect x="227" y="69" width="53" height="31" rx="4" fill="#171918"/><text x="253" y="89" text-anchor="middle" font-size="8" fill="#c9b991">12:00</text><circle cx="246" cy="119" r="5" fill="#b5a27c"/><circle cx="269" cy="119" r="5" fill="#777970"/></g>';
+  else art='<g transform="translate(145 24)"><path d="M77 20h70l-9 96H87z" fill="#c9c7bf" fill-opacity=".72" stroke="#aaa69a"/><path d="M70 114h84l8 17H62z" fill="url(#shell)"/><rect x="48" y="132" width="128" height="90" rx="14" fill="url(#shell)" stroke="#d6d1c2" stroke-width="2"/><circle cx="112" cy="177" r="30" fill="#171918" stroke="#aaa69a" stroke-width="4"/><circle cx="112" cy="177" r="6" fill="#b5a27c"/></g>';
+  caption=(products[idx]?esc(products[idx].name):"HOME APPLIANCES")+" · SELECTED FOR YOUR HOME";
+ }else if(phase<.6){
+  bg="#171713";
+  var circuit="",wires="";
+  for(var c=0;c<8;c++){var cx=148+c*27,cy=124+Math.sin(c*1.3+local*5)*15;circuit+='<rect x="'+cx+'" y="'+cy+'" width="18" height="25" rx="3" fill="#696857" stroke="#c2b58f"/><circle cx="'+(cx+9)+'" cy="'+(cy+12)+'" r="4" fill="#181917" stroke="#d0c3a0"/>'}
+  wires='<path d="M112 130c-28-39-29-66-12-81m33 78c-16-43-6-72 13-91m211 94c24-35 22-63 7-82m-30 84c12-38 2-65-16-83" fill="none" stroke="#b8a987" stroke-width="5" stroke-linecap="round"/>';
+  art='<g opacity=".95">'+wires+'<rect x="111" y="98" width="253" height="121" rx="11" fill="#55574f" stroke="#d0c3a0" stroke-width="3"/><path d="M126 115h223v86H126z" fill="#20221e" stroke="#92876c"/>'+circuit+'<path d="M138 179h190M155 168l-12 11 12 11m160-22 12 11-12 11" fill="none" stroke="#b8a987" stroke-width="2"/><path d="M89 202c11-32 31-45 49-37l18 13-27 37-28 15zM362 202c-11-32-31-45-49-37l-18 13 27 37 28 15z" fill="#aaa392" stroke="#ded8ca" stroke-width="2"/><path d="M124 206l35-39m162 39-35-39" stroke="#ded8ca" stroke-width="8" stroke-linecap="round"/></g>';
+  caption="CHECKED WITH CARE · SUPPORTED BY ALJANNAT";
+ }else if(phase<.8){
+  art='<g transform="translate(82 8)"><path d="M240 19c112 0 193 74 193 173S352 365 240 365 47 291 47 192 128 19 240 19z" fill="url(#ivory)"/><path d="M240 42c93 0 166 62 166 150s-73 150-166 150S74 280 74 192 147 42 240 42z" fill="#131513"/><rect x="115" y="131" width="250" height="70" rx="13" fill="url(#shell)" stroke="#e5e1d6" stroke-width="2"/><path d="M127 144h225v14H127zM130 178h219m-219 7h219" stroke="#777970" stroke-width="2"/><path d="M127 220h71v100h-71z" fill="url(#shell)" stroke="#d1cdc1"/><path d="M210 220h71v100h-71z" fill="url(#shell)" stroke="#d1cdc1"/><circle cx="315" cy="268" r="39" fill="#171918" stroke="#aaa69a" stroke-width="5"/></g>';
+  caption="THE HOME COLLECTION · COMFORT, CONSIDERED";
+ }else{
+  var rise=local*24;
+  art='<g transform="translate(0 '+(-rise)+')" opacity=".95"><path d="M116 57h250v25H116z" fill="url(#shell)" stroke="#ded9ca"/><path d="M128 92h226v15H128z" fill="#b7b2a4" opacity=".7"/><path d="M132 123h218v22H132z" fill="#171918" stroke="#aea58e"/><circle cx="240" cy="134" r="10" fill="#b3a078"/><path d="M146 166h188v46H146z" fill="#4a4b43" stroke="#b6a987" stroke-width="2"/><path d="M154 175h172v28H154z" fill="#161817"/><path d="M170 188h140m-120-7v14m20-14v14m20-14v14m20-14v14m20-14v14" stroke="#b6a987" stroke-width="2"/><path d="M156 229h168v18H156z" fill="url(#shell)" stroke="#d6d1c2"/><circle cx="240" cy="291" r="44" fill="none" stroke="#b5a27c" stroke-width="7" stroke-dasharray="5 3"/><circle cx="240" cy="291" r="29" fill="#171918" stroke="#d6d1c2" stroke-width="2"/><path d="M180 249v19m120-19v19" stroke="#d6d1c2" stroke-width="5"/><path d="M110 100h-40m300 0h40m-300 62h-40m300 0h40" stroke="#c5bdac" stroke-width="2"/></g>';
+  caption="ENGINEERED FOR EVERYDAY PERFORMANCE";
+ }
+ return '<svg xmlns="http://www.w3.org/2000/svg" width="'+FRAME_W+'" height="'+FRAME_H+'" viewBox="0 0 480 270"><defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="'+bg+'"/><stop offset="1" stop-color="#08090b"/></linearGradient><linearGradient id="shell" x2="1" y2="1"><stop stop-color="#e5e2d9"/><stop offset=".27" stop-color="#777971"/><stop offset=".55" stop-color="#d5d2c8"/><stop offset=".82" stop-color="#656861"/><stop offset="1" stop-color="#c8c4b8"/></linearGradient><linearGradient id="ivory"><stop stop-color="#f8f6ef"/><stop offset=".55" stop-color="#b6b4aa"/><stop offset="1" stop-color="#e8e6de"/></linearGradient><radialGradient id="vignette"><stop offset=".48" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient></defs><rect width="480" height="270" fill="url(#bg)"/><ellipse cx="240" cy="132" rx="215" ry="138" fill="#b7a782" opacity=".06"/>'+art+'<rect width="480" height="270" fill="url(#vignette)"/><text x="25" y="246" fill="#a8a69e" font-size="7" letter-spacing="3">'+caption+'</text></svg>';
+}
+function resizeCanvas(){
+ var dpr=Math.min(window.devicePixelRatio||1,2),w=window.innerWidth,h=window.innerHeight;
+ ctx.canvas.width=Math.round(w*dpr);ctx.canvas.height=Math.round(h*dpr);ctx.canvas.style.width=w+"px";ctx.canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);drawFrame(currentFrame<0?0:currentFrame);
+}
+function drawFrame(index){
+ if(!frames.length)return;
+ index=Math.max(0,Math.min(FRAME_COUNT-1,index|0));if(index===currentFrame&&lastScroll===window.scrollY)return;
+ currentFrame=index;lastScroll=window.scrollY;
+ var image=frames[index],w=window.innerWidth,h=window.innerHeight,scale=Math.max(w/FRAME_W,h/FRAME_H),dw=FRAME_W*scale,dh=FRAME_H*scale;
+ ctx.clearRect(0,0,w,h);ctx.drawImage(image,(w-dw)/2,(h-dh)/2,dw,dh);
+ document.getElementById("frameindex").textContent="/ "+String(index+1).padStart(3,"0")+" / "+FRAME_COUNT;
+}
+function updateScroll(){
+ rafPending=false;
+ var max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+ var frame=Math.round(window.scrollY/max*(FRAME_COUNT-1));
+ drawFrame(frame);
+ var section=document.getElementById("featured"),track=document.getElementById("appliancetrack"),sr=section.getBoundingClientRect(),pageInset=parseFloat(getComputedStyle(document.querySelector(".sticky-collection")).paddingLeft)||0,trackMax=Math.max(0,track.scrollWidth-window.innerWidth+pageInset*2);
+ var sectionProgress=Math.min(1,Math.max(0,(window.innerHeight-sr.top)/(section.offsetHeight-window.innerHeight)));
+ track.style.transform="translate3d("+(-trackMax*sectionProgress)+"px,0,0)";
+ var arch=document.getElementById("archpanel"),ar=arch.parentElement.getBoundingClientRect(),ap=Math.min(1,Math.max(0,(window.innerHeight-ar.top)/(ar.height+window.innerHeight*.55)));
+ arch.style.transform="translate3d("+(10-10*ap)+"%,0,0)";
+}
+function scheduleScroll(){if(!rafPending){rafPending=true;requestAnimationFrame(updateScroll)}}
+function revealObserver(){
+ var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}})},{threshold:.13});
+ document.querySelectorAll(".reveal").forEach(function(el){observer.observe(el)});
+}
+function loadFrames(){
+ var bar=document.getElementById("loaderbar"),percent=document.getElementById("loaderpercent"),preloader=document.getElementById("preloader");
+ var jobs=[];
+ for(var i=0;i<FRAME_COUNT;i++){(function(index){jobs.push(new Promise(function(resolve,reject){
+  var image=new Image();image.onload=function(){
+   var decoded=image.decode?image.decode():Promise.resolve();
+   decoded.then(function(){frames[index]=image;frameReady++;bar.style.width=(frameReady/FRAME_COUNT*100).toFixed(1)+"%";percent.textContent=Math.floor(frameReady/FRAME_COUNT*100)+"%";resolve(image)}).catch(reject);
+  };
+  image.onerror=function(){reject(new Error("Could not decode animation frame "+(index+1)))};
+  image.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(frameSvg(index));
+ }))})(i)}
+ Promise.all(jobs).then(function(loaded){
+  frames=loaded;frameReady=FRAME_COUNT;bar.style.width="100%";percent.textContent="100%";
+  requestAnimationFrame(function(){resizeCanvas();document.body.classList.remove("loading");preloader.classList.add("done");revealObserver();scheduleScroll();setTimeout(function(){preloader.remove()},900)});
+ }).catch(function(error){console.error(error);percent.textContent="RETRY";setTimeout(loadFrames,1200)});
+}
+function readCatalog(){
+ try{var saved=localStorage.getItem("aljannat_luxury_products");if(saved){var parsed=JSON.parse(saved);if(Array.isArray(parsed))products=parsed}}catch(error){console.error("Could not read the saved appliance collection.",error)}
+ try{var savedCart=localStorage.getItem("aljannat_luxury_cart");if(savedCart){var parsedCart=JSON.parse(savedCart);if(parsedCart&&typeof parsedCart==="object")cart=parsedCart}}catch(error){console.error("Could not read the saved shopping bag.",error)}
+}
+function initSmoothScroll(){
+ var script=document.createElement("script");script.src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js";script.async=true;
+ script.onload=function(){if(window.Lenis){lenis=new window.Lenis({duration:1.2,smoothWheel:true,wheelMultiplier:.8,touchMultiplier:1.1});function tick(time){lenis.raf(time);requestAnimationFrame(tick)}requestAnimationFrame(tick)}};
+ script.onerror=function(){console.warn("Lenis could not load; native scroll remains enabled.")};
+ document.head.appendChild(script);
+}
+function admin(){
+ var shade=document.getElementById("adminshade"),content=document.getElementById("admincontent"),authed=false;
+ function renderLogin(){
+  content.innerHTML='<h2>Store access</h2><p class="eyebrow">ALJANNAT ELECTRONICS · ADMIN</p><form class="admin-form" id="adminlogin"><label>Owner name<input id="adminname" autocomplete="username" required></label><label>Password<input id="adminpassword" type="password" autocomplete="current-password" required></label><div id="admin-message" role="status"></div><button class="button" type="submit">Sign in</button><p style="font-size:10px;color:#888">For private store management. This standalone demo keeps its access check in the page source.</p></form>';
+  document.getElementById("adminlogin").addEventListener("submit",function(e){e.preventDefault();if(document.getElementById("adminname").value.trim().toLowerCase()==="faizan fasih"&&document.getElementById("adminpassword").value==="Marwan@5178"){authed=true;renderEditor()}else{document.getElementById("admin-message").textContent="The name or password is incorrect."}});
+ }
+ function renderEditor(){
+  if(!authed)return;
+  content.innerHTML='<h2>Collection &amp; settings</h2><p class="eyebrow">Changes are saved in this browser.</p><div class="admin-actions"><button class="button" id="addappliance" type="button">Add appliance</button><button class="button" id="savecatalog" type="button">Save changes</button><button class="button" id="downloadcatalog" type="button">Download updated HTML</button></div><div class="admin-products">'+products.map(function(p,i){return '<div class="admin-product" data-row="'+i+'"><input aria-label="Appliance name" data-field="name" value="'+esc(p.name)+'"><input aria-label="Description" data-field="sub" value="'+esc(p.sub)+'"><input aria-label="Price" type="number" min="0" data-field="price" value="'+Number(p.price||0)+'"><button class="button" type="button" data-remove="'+i+'">Remove</button></div>'}).join("")+'</div><div id="admin-message" role="status"></div>';
+  content.querySelectorAll("[data-field]").forEach(function(input){input.addEventListener("input",function(){var row=Number(input.closest("[data-row]").dataset.row);products[row][input.dataset.field]=input.dataset.field==="price"?Math.max(0,Number(input.value)||0):input.value;updateProductMarkup()})});
+  content.querySelectorAll("[data-remove]").forEach(function(button){button.addEventListener("click",function(){products.splice(Number(button.dataset.remove),1);updateProductMarkup();renderEditor()})});
+  document.getElementById("addappliance").onclick=function(){products.push({id:Date.now(),name:"NEW APPLIANCE",sub:"HOME ELECTRONICS",price:0,tone:"#a99a7b",face:"#181a19"});updateProductMarkup();renderEditor()};
+  document.getElementById("savecatalog").onclick=function(){try{localStorage.setItem("aljannat_luxury_products",JSON.stringify(products));document.getElementById("admin-message").textContent="Collection saved in this browser."}catch(error){document.getElementById("admin-message").textContent="Could not save: "+error.message}};
+  document.getElementById("downloadcatalog").onclick=function(){try{var copy=document.documentElement.cloneNode(true),state='<script id="catalog-state" type="application/json">'+JSON.stringify(products).replace(/</g,"\\u003c")+'<'+"/script>";var old=copy.querySelector("#catalog-state");if(old)old.outerHTML=state;else copy.querySelector("#adminshade").insertAdjacentHTML("beforebegin",state);var blob=new Blob(["<!doctype html>\n"+copy.outerHTML],{type:"text/html"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ALJANNAT-ELECTRONICS-Luxury.html";a.click();setTimeout(function(){URL.revokeObjectURL(url)},1000);document.getElementById("admin-message").textContent="Updated HTML downloaded."}catch(error){document.getElementById("admin-message").textContent="Could not create file: "+error.message}};
+ }
+ document.getElementById("adminclose").onclick=function(){shade.classList.remove("open");authed=false};
+ document.getElementById("adminbutton").onclick=function(){shade.classList.add("open");renderLogin()};
+}
+readCatalog();
+var savedCatalog=document.getElementById("catalog-state");if(savedCatalog){try{products=JSON.parse(savedCatalog.textContent)}catch(error){console.error("Could not read embedded catalog.",error)}}
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("cartbutton").onclick=function(){document.getElementById("cartshade").classList.add("open");renderCart()};
+document.getElementById("cartclose").onclick=function(){document.getElementById("cartshade").classList.remove("open")};
+document.getElementById("cartshade").addEventListener("click",function(e){if(e.target.id==="cartshade")e.currentTarget.classList.remove("open")});
+document.getElementById("cartcount").textContent="00";
+updateProductMarkup();admin();initSmoothScroll();
+renderCart();
+window.addEventListener("scroll",scheduleScroll,{passive:true});window.addEventListener("resize",function(){resizeCanvas();scheduleScroll()});
+document.querySelectorAll('a[href^="#"]').forEach(function(link){link.addEventListener("click",function(e){var target=document.querySelector(link.getAttribute("href"));if(target){e.preventDefault();if(lenis)lenis.scrollTo(target,{offset:0});else target.scrollIntoView({behavior:"smooth"})}})});
+loadFrames();
+</script>
+</body>
+</html>
